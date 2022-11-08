@@ -1,2 +1,2 @@
 # StrawWars
-Beans
+de Jan isch en Cullo
