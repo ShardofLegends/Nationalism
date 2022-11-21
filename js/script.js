@@ -24,13 +24,15 @@ const loadNames = () => {
             return `
             <li class="names">
                   <span>${Name}</span>
-                  <i class="names_delete"></i>
+                  <button id="edit_button" type="submit">Edit</button>
+                  <button id="delete_button" type="submit">Del</button>
       </li>
         `;
         })
         .join('');
     list.innerHTML = htmlString;
 };
+
 loadNames();
 
   name_input.addEventListener('keyup', (e) => {
