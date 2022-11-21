@@ -1,5 +1,5 @@
 const list = document.querySelector(".nameslist_container")
-const name_input = document.getElementById('name_input');
+const name_input = document.getElementById('search_field');
 
 
 
