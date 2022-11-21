@@ -36,7 +36,7 @@ const loadNames = () => {
 loadNames();
 
   name_input.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
+    const searchString = e.target.value.toLowerCase();
 
     
     const filteredNames = daten.filter((name) => String(name).toLowerCase().includes(searchString))
