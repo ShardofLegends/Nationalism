@@ -39,7 +39,7 @@ loadNames();
     const searchString = e.target.value;
 
     
-    const filteredNames = daten.filter((name) => String(name).includes(searchString))
+    const filteredNames = daten.filter((name) => String(name).toLowerCase().includes(searchString))
     console.log(searchString)
     console.log(filteredNames)
     displayNames(filteredNames);
