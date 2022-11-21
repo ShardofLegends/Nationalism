@@ -12,11 +12,17 @@
         <div id="sheet1">
             <h1>Write&nbsp;your&nbsp;Name</h1>
             <div id="search_bar">
-                <input id="name_input" class="search_field" type="text" placeholder="Write your Name in here">
-                <button class="search_button" type="submit"><img id="search_img" src="./images/search.png" alt="magnifying glass"></i></button>
+                <input id="search_field" type="text" placeholder="Write your Name in here">
+                <button id="search_button" type="submit"><img id="search_img" src="./images/search.png" alt="magnifying glass"></button>
+            </div>
+            <div id="new_name">
+                <h2>Neuer&nbsp;Eintrag</h2>
+                <input id="new_name_field" type="text" placeholder="Write the Name in here">
+                <button id="save_button" type="submit">Save</button>
             </div>
         </div>
         <div class="nameslist_container">
+            <h1>Namen</h1>
             <ul class="nameslist">
                 <!--Hier kommen die Namenseinträge von Javascript-->
             </ul>
@@ -25,8 +31,7 @@
     </main>
     <footer>
 
-
-
+        
 
     </footer>
 </body>

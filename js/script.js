@@ -19,7 +19,8 @@ const loadNames = () => {
     const html = `
      <li class="names">
                   <span>${daten[i]}</span>
-                  <i class="names_delete"></i>
+                  <button id="edit_button" type="submit">Edit</button>
+                  <button id="delete_button" type="submit">Del</button>
       </li>
       `;
     list.innerHTML += html;
