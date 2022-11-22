@@ -53,6 +53,7 @@ save_button.addEventListener("click", function () {
   const newSearchString = new_input.value;
   daten.unshift(newSearchString);
   displayNames(daten);
+  document.getElementById('new_name_field').value='';
 });
 
 // const nameSelector = document.querySelectorAll(".names");
@@ -61,6 +62,8 @@ save_button.addEventListener("click", function () {
 //     console.log(element.querySelector("span").innerHTML);
 //   });
 // });
+
+
 
 //identify clicked name
 document.addEventListener("click", (e) => {
