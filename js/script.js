@@ -30,7 +30,7 @@ const displayNames = (Names) => {
                   <span id="${i++}">${Name}</span>
                   <button id="edit_button"  type="submit"><img id="edit_img" class="editbutton" type="${Name}" src="../images/pen.png" alt="paper bin"></button>
                   <button id="delete_button"  type="submit"><img id="delete_img" class="deletebutton" type="${Name}" src="../images/delete.png" alt="paper bin"></button>
-                  <button id="like_button" type="submit"><img id="like_img" type="${Name}" src="../images/heart_empty.png" alt="paper bin"></button>
+                  <button id="like_button" type="submit"><img id="like_img" class="emptylikebutton" type="${Name}" src="../images/heart_empty.png" alt="paper bin"></button>
                   </li>
         `;
   }).join("");
@@ -59,16 +59,8 @@ save_button.addEventListener("click", function () {
   document.getElementById('new_name_field').value='';
 });
 
-// const nameSelector = document.querySelectorAll(".names");
-// nameSelector.forEach((element) => {
-//   element.addEventListener("click", () => {
-//     console.log(element.querySelector("span").innerHTML);
-//   });
-// });
-//let delete_img = document.getElementById('delete_img');
 //Delete Name
 document.addEventListener("click", (e) => {
-  //let name = e.target?.querySelector("span")?.innerHTML
   if(e.target.classList.contains('editbutton')){
     const name = e.target.getAttribute('type')
     const index = daten.indexOf(name);
@@ -84,12 +76,21 @@ document.addEventListener("click", (e) => {
 
 //Edit Name
 document.addEventListener("click", (e) => {
-  //let name = e.target?.querySelector("span")?.innerHTML
   if(e.target.classList.contains('deletebutton')){
     const name = e.target.getAttribute('type')
     const index = daten.indexOf(name);
     daten.splice(index, 1)
     displayNames(daten)
+  }
+});
+
+//Lesezeichen
+document.addEventListener("click", (e) => {
+  if(e.target.classList.contains('emptylikebutton')){
+    const name = e.target.getAttribute('type')
+    const index = daten.indexOf(name);
+    console.log(name)
+    //.......
   }
 });
 
