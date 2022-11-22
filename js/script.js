@@ -155,29 +155,3 @@ function displayApidata(data){
     table.innerHTML += `<tr><td>${data.country[3].country_id}</td><td>${data.country[3].probability}</td></tr>`;
     table.innerHTML += `<tr><td>${data.country[4].country_id}</td><td>${data.country[4].probability}</td></tr>`;
 }
-//Show API
-
-// const displayApidata = (apidata) => {
-//   let i = 0;
-//   const htmlString = apidata.map((apioutput) => {
-//     return `
-//       <li id="li" class="names">
-//       <p class="origin_percentages">Hello</p>
-//       </li>
-//         `;
-//   }).join("");
-//   list.innerHTML = htmlString;
-// };
-
-
-// //Display Names
-// const displayOrigin = (country_id, probability) => {
-//   const htmlString = country_id.map((country_id) => {
-//     return `
-//             <li class="origin">
-//             <p class="origin_percentages" >${country_id} : ${probability}</p>
-//         </li>
-//         `;
-//   }).join("");
-//   list.innerHTML = htmlString;
-// };
