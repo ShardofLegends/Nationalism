@@ -58,20 +58,24 @@ nameSelector.forEach((element) => {
 }); */
 
 document.addEventListener("click", (e) => {
-  if(e.target?.querySelector("span")?.innerHTML != undefined){
-    console.log(e.target?.querySelector("span")?.innerHTML);
+  if(e.target?.querySelector("span")?.innerHTML != undefined && e.target.classList.contains('names')){
+    apiCall(e.target?.querySelector("span")?.innerHTML);
   }
 });
 
-// apiCall(e.value)
-// function apiCall(nameToSearch){
-//   console.log(nameToSearch)
-// }
+function apiCall(nameToSearch){
+  let url = `https://api.nationalize.io/?name=${nameToSearch}`
+  console.log(url)
+  async function fetchData(){
+    const response = await fetch(url);
+    console.log(response)
+    var data = await response.json();
+    console.log(data)
+    }
+    fetchData();
+}
 
-// async function funcName(url){
-//   const response = await fetch(url);
-//   var data = await response.json();
-//   }
+
 
 // delete_button.addEventListener('click', function() {
 //   var listItem = this.parentNode;
