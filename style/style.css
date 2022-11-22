@@ -181,6 +181,23 @@ h2{
   box-shadow: 0 4px rgb(0, 0, 0);
 }
 
+#delete_img{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px 0 #000;
+    float: right;
+}
+#delete_img:hover {background-color: #9f9f9f}
+
+#delete_img:active {
+  background-color: #43a2bd;
+  box-shadow: 0 4px rgb(0, 0, 0);
+}
+
+
 
 #edit_button{
     background-color:white;
@@ -190,17 +207,33 @@ h2{
     margin: 5px;
     padding: 0px;
     height: 40px;
-    width: 70px;
+    width: 50px;
     font-size: 140%;
     box-shadow: 3px 3px 8px 0 #000;
 }
-
 #edit_button:hover {background-color: #9f9f9f}
 
 #edit_button:active {
   background-color: #43a2bd;
   box-shadow: 0 4px rgb(0, 0, 0);
 }
+
+#edit_img{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px 0 #000;
+    float: right;
+}
+#edit_img:hover {background-color: #9f9f9f}
+
+#edit_img:active {
+  background-color: #43a2bd;
+  box-shadow: 0 4px rgb(0, 0, 0);
+}
+
 
 /*
 #delete_img{
