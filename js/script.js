@@ -1,5 +1,6 @@
 const list = document.querySelector(".nameslist_container")
 const name_input = document.getElementById('search_field');
+const new_input = document.getElementById('new_name_field')
 
 
 
@@ -22,7 +23,7 @@ const loadNames = () => {
     const htmlString = Names
     .map((Name) => {
             return `
-            <li class="names">
+            <li id="li" class="names">
                   <span>${Name}</span>
                   <button id="edit_button" type="submit">Edit</button>
                   <button id="delete_button" type="submit">Del</button>
@@ -31,6 +32,9 @@ const loadNames = () => {
         })
         .join('');
     list.innerHTML = htmlString;
+    // var listItem = document.createElement("li");
+    // listItem.appendChild(edit_button);
+	  // listItem.appendChild(delete_button);
 };
 
 loadNames();
@@ -44,6 +48,23 @@ loadNames();
     console.log(filteredNames)
     displayNames(filteredNames);
   });
+
+  save_button.addEventListener('click', function(){
+    const newSearchString = new_input.value;
+    console.log(newSearchString);
+    daten.unshift(newSearchString);
+    displayNames(daten);
+    console.log(daten);
+  })
+  
+  // delete_button.addEventListener('click', function() {
+  //   var listItem = this.parentNode;
+	// 	var ul = listItem.parentNode;
+	// 	//Remove the parent list item from the ul.
+	// 	ul.removeChild(listItem);
+  // });
+
+
 
 
 
