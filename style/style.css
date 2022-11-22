@@ -120,7 +120,7 @@ h2{
 
 #save_button:active {
   background-color: #43a2bd;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 4px rgb(0, 0, 0);
 }
 
 
@@ -178,7 +178,7 @@ h2{
 
 #delete_button:active {
   background-color: #43a2bd;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 4px rgb(0, 0, 0);
 }
 
 
@@ -199,7 +199,7 @@ h2{
 
 #edit_button:active {
   background-color: #43a2bd;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 4px rgb(0, 0, 0);
 }
 
 /*
