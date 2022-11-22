@@ -69,19 +69,29 @@ save_button.addEventListener("click", function () {
 //Delete Name
 document.addEventListener("click", (e) => {
   //let name = e.target?.querySelector("span")?.innerHTML
+  if(e.target.classList.contains('editbutton')){
+    const name = e.target.getAttribute('type')
+    const index = daten.indexOf(name);
+    const newname = prompt("Please enter the edited name", name);
+    if (newname == null || newname == "") {
+      const message = "Process cancelled";
+    } else {
+      daten[index] = newname;
+      displayNames(daten)
+    }
+  }
+});
+
+//Edit Name
+document.addEventListener("click", (e) => {
+  //let name = e.target?.querySelector("span")?.innerHTML
   if(e.target.classList.contains('deletebutton')){
     const name = e.target.getAttribute('type')
     const index = daten.indexOf(name);
     daten.splice(index, 1)
     displayNames(daten)
   }
-
 });
-
-//Edit Name
-/*edit_button.addEventListener("click", (e) => {
-
-})*/
 
 //identify clicked name
 document.addEventListener("click", (e) => {
@@ -103,22 +113,6 @@ function apiCall(nameToSearch){
 
 
 
-// delete_button.addEventListener('click', function() {
-//   var listItem = this.parentNode;
-// 	var ul = listItem.parentNode;
-// 	//Remove the parent list item from the ul.
-// 	ul.removeChild(listItem);
-// });
-
-
-
-
-
-
-// TEST für einfügen der Namen auf die Webseite 
-
-
-
 const loadOrigin = () => {
   displayOrigin(daten);
 };
@@ -133,7 +127,4 @@ const displayOrigin = (country_id, probability) => {
         `;
   }).join("");
   list.innerHTML = htmlString;
-  // var listItem = document.createElement("li");
-  // listItem.appendChild(edit_button);
-  // listItem.appendChild(delete_button);
 };
