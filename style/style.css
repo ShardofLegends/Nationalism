@@ -7,7 +7,7 @@
 #sheet1{
     margin: 50px 8% 0px 8%;
     padding-bottom: 300px;
-    height: 40%;
+    height: 350px;
     background-color: #1e81b0;
     box-shadow: 3px 3px 8px 0 #000;
     border-radius: 30px 30px 0px 0px;
@@ -32,6 +32,15 @@ h1{
     font-family:Arial, Helvetica, sans-serif;
 }
 
+h2{
+    margin: auto;
+    padding: 10px 5px;
+    width: min-content;
+    color: white;
+    background-color: #063970;
+
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 
 
@@ -48,20 +57,21 @@ h1{
     width: 60%;
     font-size: 20px;
     box-shadow: 3px 3px 8px 0 #000;
+    border-radius: 95px;
 }
 #search_field{
     background-color: white;
-    border-radius: 95px;
+    border-radius: 95px 0px 0px 95px;
     border: 0px;
-    padding-top: 0px;
     height: 50px;
-    padding: 0px 20px 0px 20px;
-    width: 100% - 50px;
+    padding: 0px 0px 0px 20px;
+    width: calc(100% - 50px);
     font-size: 20px;
     outline: none;
 }
 #search_button{
     background-color:white;
+    position: absolute;
     float: right;
     border-radius: 90px;
     border: 0px;
@@ -71,33 +81,50 @@ h1{
     font-size: 140%;
     box-shadow: 3px 3px 8px 0 #000;
 }
+
+#search_button:hover {background-color: #9f9f9f}
+
+#search_button:active {
+  background-color: #43a2bd;
+  box-shadow: 0 4px rgb(0, 0, 0);
+}
+
 #search_img{
     background-color: white;
-	width: 20px;
+    width: 20px;
     height: 20px;
+    padding: 15px;
+    border-radius: 90px;
+    box-shadow: 3px 3px 8px 0 #000;
+    float: right;
+
 }
+
+#search_img:hover {background-color: #9f9f9f}
+
+#search_img:active {
+  background-color: #43a2bd;
+  box-shadow: 0 4px rgb(0, 0, 0);
+}
+
+
+
+
+
+
 
 
 
 /* New Names*/
-h2{
-    margin: auto;
-    padding: 10px 5px;
-    width: min-content;
-    color: white;
-    background-color: #063970;
 
-    font-family:Arial, Helvetica, sans-serif;
-}
 
 #new_name{
     background-color:#063970;
-    text-decoration: none; 
     color: white;
     font-family:Arial, Helvetica, sans-serif;
     margin: auto;
     margin-top: 50px;
-    padding: 7px;
+    padding: 8px;
     border-radius: 30px;
     width: 55%;
     box-shadow: 3px 3px 8px 0 #000;
@@ -106,12 +133,15 @@ h2{
 #save_button{
     background-color:white;
     text-align: center;
-    float: inline-end;
+    position: absolute;
+    margin-left: 10px;
     border: 0px;
     border-radius: 90px;
     height: 50px;
     width: 70px;
-
+    box-shadow: 3px 3px 8px 0 #000;
+    display: inline-block;
+    
     font-size: 20px;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -123,24 +153,18 @@ h2{
   box-shadow: 0 4px rgb(0, 0, 0);
 }
 
-
 #new_name_field{
     background-color: white;
+    padding: 0px 0px 0px 20px;
     border-radius: 95px;
     border: 0px;
-    height: 50px;
-    padding: 0px 35% 0px 35%;
-    width: 100% - 50px;
+    width: calc(100% - 80px);
+    height:50px;
     font-size: 20px;
+    box-shadow: 3px 3px 8px 0 #000;
+    border-radius: 95px;
     outline: none;
 }
-
-
-
-
-
-
-
 
 
 
@@ -153,7 +177,7 @@ h2{
 /*Style für die Auflistung der Namen*/
 .nameslist_container{
     text-align: center;
-    margin: -200px 8% 7% 8%;
+    margin: -200px 8% 100px 8%;
     padding: 0px 0px 3% 0px;
     border-radius: 30px;
     background-color: #1e81b0;
@@ -235,21 +259,16 @@ h2{
 }
 
 
-/*
-#delete_img{
-    background-color: white;
-	width: 10px;
-    height: 10px;
+#namelist_namen{
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
 }
-*/
-
-
-
 
 .nameslist{
     display: inline-block;
     text-align: center;
-    list-style-type: none;
     padding: 0;
     margin: 0;
 }
