@@ -50,12 +50,12 @@ save_button.addEventListener("click", function () {
   displayNames(daten);
 });
 
-/* const nameSelector = document.querySelectorAll(".names");
+const nameSelector = document.querySelectorAll(".names");
 nameSelector.forEach((element) => {
   element.addEventListener("click", () => {
     console.log(element.querySelector("span").innerHTML);
   });
-}); */
+});
 
 document.addEventListener("click", (e) => {
   if(e.target?.querySelector("span")?.innerHTML != undefined && e.target.classList.contains('names')){
