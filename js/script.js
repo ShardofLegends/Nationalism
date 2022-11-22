@@ -2,6 +2,8 @@ const list = document.querySelector(".nameslist_container");
 const name_input = document.getElementById("search_field");
 const new_input = document.getElementById("new_name_field");
 
+
+
 //fetch date from json file into array
 async function getNames() {
   const data = await fetch("../names.json");
@@ -15,25 +17,23 @@ let daten = await getNames();
 console.log(daten);
 
 //call disply names without Filter (names from array)
-const loadNames = () => {
-  displayNames(daten);
+const loadNames = async () => {
+  const data = await displayNames(daten);
 };
 
 //Display Names
 const displayNames = (Names) => {
+  let i = 0;
   const htmlString = Names.map((Name) => {
     return `
             <li id="li" class="names">
-                  <span>${Name}</span>
-                  <button id="edit_button" type="submit"><img id="delete_img" src="../images/pen.png" alt="paper bin"></button>
-                  <button id="delete_button" type="submit"><img id="delete_img" src="../images/delete.png" alt="paper bin"></button>
+                  <span id="${i++}">${Name}</span>
+                  <button id="edit_button"  type="submit"><img id="edit_img" class="editbutton" type="${Name}" src="../images/pen.png" alt="paper bin"></button>
+                  <button id="delete_button"  type="submit"><img id="delete_img" class="deletebutton" type="${Name}" src="../images/delete.png" alt="paper bin"></button>
       </li>
         `;
   }).join("");
   list.innerHTML = htmlString;
-  // var listItem = document.createElement("li");
-  // listItem.appendChild(edit_button);
-  // listItem.appendChild(delete_button);
 };
 
 loadNames();
@@ -47,6 +47,8 @@ name_input.addEventListener("keyup", (e) => {
   );
   displayNames(filteredNames);
 });
+
+
 
 //Add new Name
 save_button.addEventListener("click", function () {
@@ -62,8 +64,23 @@ save_button.addEventListener("click", function () {
 //     console.log(element.querySelector("span").innerHTML);
 //   });
 // });
+//let delete_img = document.getElementById('delete_img');
+//Delete Name
+document.addEventListener("click", (e) => {
+  //let name = e.target?.querySelector("span")?.innerHTML
+  if(e.target.classList.contains('deletebutton')){
+    const name = e.target.getAttribute('type')
+    const index = daten.indexOf(name);
+    daten.splice(index, 1)
+    displayNames(daten)
+  }
 
+});
 
+//Edit Name
+/*edit_button.addEventListener("click", (e) => {
+
+})*/
 
 //identify clicked name
 document.addEventListener("click", (e) => {
@@ -75,10 +92,8 @@ document.addEventListener("click", (e) => {
 //API-call
 function apiCall(nameToSearch){
   let url = `https://api.nationalize.io/?name=${nameToSearch}`
-  console.log(url)
   async function fetchData(){
     const response = await fetch(url);
-    console.log(response)
     var data = await response.json();
     console.log(data)
     }
