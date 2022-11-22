@@ -259,6 +259,65 @@ h2{
 }
 
 
+#like_button{
+    background-color:white;
+    float: right;
+    border-radius: 15px;
+    border: 0px;
+    margin: 5px;
+    padding: 0px;
+    height: 40px;
+    width: 50px;
+    font-size: 140%;
+    box-shadow: 3px 3px 8px 0 #000;
+}
+#like_button:hover {background-color: #9f9f9f}
+
+#like_button:active {
+  background-color: #43a2bd;
+  box-shadow: 0 4px rgb(0, 0, 0);
+}
+
+#like_img{
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px 0 #000;
+    float: right;
+}
+#like_img:hover {background-color: #9f9f9f}
+
+#like_img:active {
+  background-color: #43a2bd;
+  box-shadow: 0 4px rgb(0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #namelist_namen{
     display: inline-block;
     text-align: center;

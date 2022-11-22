@@ -25,8 +25,9 @@ const displayNames = (Names) => {
     return `
             <li id="li" class="names">
                   <span>${Name}</span>
-                  <button id="edit_button" type="submit"><img id="delete_img" src="../images/pen.png" alt="paper bin"></button>
                   <button id="delete_button" type="submit"><img id="delete_img" src="../images/delete.png" alt="paper bin"></button>
+                  <button id="edit_button" type="submit"><img id="delete_img" src="../images/pen.png" alt="paper bin"></button>
+                  <button id="like_button" type="submit"><img id="like_img" src="../images/heart_empty.png" alt="paper bin"></button>
       </li>
         `;
   }).join("");
