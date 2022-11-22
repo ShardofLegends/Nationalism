@@ -2,6 +2,7 @@ const list = document.querySelector(".nameslist_container");
 const name_input = document.getElementById("search_field");
 const new_input = document.getElementById("new_name_field");
 
+//fetch date from json file into array
 async function getNames() {
   const data = await fetch("../names.json");
   const json = await data.json();
@@ -13,10 +14,12 @@ let daten = await getNames();
 
 console.log(daten);
 
+//call disply names without Filter (names from array)
 const loadNames = () => {
   displayNames(daten);
 };
 
+//Display Names
 const displayNames = (Names) => {
   const htmlString = Names.map((Name) => {
     return `
@@ -35,6 +38,7 @@ const displayNames = (Names) => {
 
 loadNames();
 
+//Search Function and call filtered names to display
 name_input.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
 
@@ -44,25 +48,28 @@ name_input.addEventListener("keyup", (e) => {
   displayNames(filteredNames);
 });
 
+//Add new Name
 save_button.addEventListener("click", function () {
   const newSearchString = new_input.value;
   daten.unshift(newSearchString);
   displayNames(daten);
 });
 
-const nameSelector = document.querySelectorAll(".names");
-nameSelector.forEach((element) => {
-  element.addEventListener("click", () => {
-    console.log(element.querySelector("span").innerHTML);
-  });
-});
+// const nameSelector = document.querySelectorAll(".names");
+// nameSelector.forEach((element) => {
+//   element.addEventListener("click", () => {
+//     console.log(element.querySelector("span").innerHTML);
+//   });
+// });
 
+//identify clicked name
 document.addEventListener("click", (e) => {
   if(e.target?.querySelector("span")?.innerHTML != undefined && e.target.classList.contains('names')){
     apiCall(e.target?.querySelector("span")?.innerHTML);
   }
 });
 
+//API-call
 function apiCall(nameToSearch){
   let url = `https://api.nationalize.io/?name=${nameToSearch}`
   console.log(url)
