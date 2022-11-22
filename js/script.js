@@ -85,11 +85,30 @@ document.addEventListener("click", (e) => {
   }
 });
 
-//Lesezeichen
+//Lesezeichen (not fully working)
+var img = "Test";
 document.addEventListener("click", (e) => {
   if(e.target.classList.contains('emptylikebutton')){
     const name = e.target.getAttribute('type')
-    const index = daten.indexOf(name);
+    const index = daten.indexOf(name); 
+
+
+    function irg() {
+      img = document.getElementById("like_img").getAttribute("src");
+      return img;
+    };
+
+    irg()
+
+    switch (img) {
+      case "./images/heart_empty.png":
+        img = document.getElementById('like_img').setAttribute("src", "./images/heart_filled.png");
+        break;
+      case "./images/heart_filled.png":
+        img = document.getElementById('like_img').setAttribute("src", "./images/heart_empty.png");
+        break;
+    }
+
     console.log(name)
     //.......
   }
