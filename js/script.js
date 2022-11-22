@@ -30,7 +30,8 @@ const displayNames = (Names) => {
                   <span id="${i++}">${Name}</span>
                   <button id="edit_button"  type="submit"><img id="edit_img" class="editbutton" type="${Name}" src="../images/pen.png" alt="paper bin"></button>
                   <button id="delete_button"  type="submit"><img id="delete_img" class="deletebutton" type="${Name}" src="../images/delete.png" alt="paper bin"></button>
-      </li>
+                  <button id="like_button" type="submit"><img id="like_img" type="${Name}" src="../images/heart_empty.png" alt="paper bin"></button>
+                  </li>
         `;
   }).join("");
   list.innerHTML = htmlString;
@@ -108,3 +109,31 @@ function apiCall(nameToSearch){
 // 	//Remove the parent list item from the ul.
 // 	ul.removeChild(listItem);
 // });
+
+
+
+
+
+
+// TEST für einfügen der Namen auf die Webseite 
+
+
+
+const loadOrigin = () => {
+  displayOrigin(daten);
+};
+
+//Display Names
+const displayOrigin = (country_id, probability) => {
+  const htmlString = country_id.map((country_id) => {
+    return `
+            <li class="origin">
+            <p class="origin_percentages" >${country_id} : ${probability}</p>
+        </li>
+        `;
+  }).join("");
+  list.innerHTML = htmlString;
+  // var listItem = document.createElement("li");
+  // listItem.appendChild(edit_button);
+  // listItem.appendChild(delete_button);
+};
