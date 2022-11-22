@@ -14,7 +14,7 @@ let daten = await getNames();
 
 console.log(daten);
 
-//call disply names without Filter (names from array)
+//call display names without Filter (names from array)
 const loadNames = () => {
   displayNames(daten);
 };
@@ -23,7 +23,7 @@ const loadNames = () => {
 const displayNames = (Names) => {
   const htmlString = Names.map((Name) => {
     return `
-            <li id="li" class="names">
+            <li class="names">
                   <span>${Name}</span>
                   <button id="delete_button" type="submit"><img id="delete_img" src="../images/delete.png" alt="paper bin"></button>
                   <button id="edit_button" type="submit"><img id="delete_img" src="../images/pen.png" alt="paper bin"></button>
@@ -94,3 +94,31 @@ function apiCall(nameToSearch){
 // 	//Remove the parent list item from the ul.
 // 	ul.removeChild(listItem);
 // });
+
+
+
+
+
+
+// TEST für einfügen der Namen auf die Webseite 
+
+
+
+const loadOrigin = () => {
+  displayOrigin(daten);
+};
+
+//Display Names
+const displayOrigin = (country_id, probability) => {
+  const htmlString = country_id.map((country_id) => {
+    return `
+            <li class="origin">
+            <p class="origin_percentages" >${country_id} : ${probability}</p>
+        </li>
+        `;
+  }).join("");
+  list.innerHTML = htmlString;
+  // var listItem = document.createElement("li");
+  // listItem.appendChild(edit_button);
+  // listItem.appendChild(delete_button);
+};
