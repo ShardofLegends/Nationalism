@@ -6,7 +6,7 @@
 
 #sheet1{
     margin: 50px 8% 0px 8%;
-    padding-bottom: 300px;
+    padding-bottom: 200px;
     height: 800px;
     background-color: #1e81b0;
     box-shadow: 3px 3px 8px 0 #000;
@@ -24,12 +24,16 @@ footer{
 
 h1{
     margin: auto;
-    padding: 40px 5px;
+    padding: 50px 5px;
     width: min-content;
     color: white;
     background-color: #1e81b0;
 
     font-family:Arial, Helvetica, sans-serif;
+}
+
+.lowerpadding{
+    padding: 0px 0px;
 }
 
 h2{
@@ -41,9 +45,6 @@ h2{
 
     font-family:Arial, Helvetica, sans-serif;
 }
-
-
-
 
 
 
@@ -254,10 +255,13 @@ h2{
 }
 
 
-
-
-
-
+.origin_container{
+    text-align: center;
+    margin: 50px 8% 50px 8%;
+    padding: 0px 0px 0px 0px;
+    border-radius: 30px;
+    background-color: #1e81b0;
+}
 
 
 #delete_button{
@@ -424,4 +428,11 @@ h2{
     float: center;
     margin: auto;
     padding: 30px;
+}
+
+table, th, td{
+    border: 1px solid;
+    margin: auto;
+    margin-top: 50px;
+    padding: 8px;
 }

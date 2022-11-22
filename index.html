@@ -10,22 +10,27 @@
 <body>
     <main>
         <div id="sheet1">
-            <h1>Write&nbsp;your&nbsp;Name</h1>
+            <h1>Search&nbsp;for&nbsp;a&nbsp;name</h1>
             <div id="search_bar">
                 <input id="search_field" type="text" placeholder="Write the name in here">
                 <button id="search_button" type="submit"><img id="search_img" src="./images/search.png" alt="magnifying glass"></button>
             </div>
             <div id="new_name">
-                <h2>Neuer&nbsp;Eintrag</h2>
+                <h2>Add&nbsp;name</h2>
                 <input id="new_name_field" type="text" placeholder="Write the Name in here">
                 <button id="save_button" type="submit">Save</button>
             </div>
-            <div id="origin">
-                <h2>Herkunft&nbsp;des&nbsp;Namens</h2>
+            <div class="origin_container">
+                <h1 class="lowerpadding">Origin&nbsp;of&nbsp;the&nbsp;name</h1>
                 
-                <ul class="origin">
-
-                </ul>
+                <table id="origin">
+                    <div id="originlist"></div>
+                        <tr>
+                            <th>Country</th>
+                            <th>Probability</th>
+                        </tr>
+                    <div id="originlist"></div>
+                </table>
 
 
             </div>

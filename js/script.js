@@ -1,6 +1,7 @@
 const list = document.querySelector(".nameslist_container");
 const name_input = document.getElementById("search_field");
 const new_input = document.getElementById("new_name_field");
+var table = document.getElementById("origin");
 
 
 
@@ -26,12 +27,12 @@ const displayNames = (Names) => {
   let i = 0;
   const htmlString = Names.map((Name) => {
     return `
-            <li id="li" class="names">
-                  <span id="${i++}">${Name}</span>
-                  <button id="edit_button"  type="submit"><img id="edit_img" class="editbutton" type="${Name}" src="../images/pen.png" alt="paper bin"></button>
-                  <button id="delete_button"  type="submit"><img id="delete_img" class="deletebutton" type="${Name}" src="../images/delete.png" alt="paper bin"></button>
-                  <button id="like_button" type="submit"><img id="like_img" class="emptylikebutton" type="${Name}" src="../images/heart_empty.png" alt="paper bin"></button>
-                  </li>
+          <li id="li" class="names">
+          <span id="${i++}">${Name}</span>
+          <button id="edit_button"  type="submit"><img id="edit_img" class="editbutton" type="${Name}" src="../images/pen.png" alt="paper bin"></button>
+          <button id="delete_button"  type="submit"><img id="delete_img" class="deletebutton" type="${Name}" src="../images/delete.png" alt="paper bin"></button>
+          <button id="like_button" type="submit"><img id="like_img" class="emptylikebutton" type="${Name}" src="../images/heart_empty.png" alt="paper bin"></button>
+          </li>
         `;
   }).join("");
   list.innerHTML = htmlString;
@@ -102,30 +103,62 @@ document.addEventListener("click", (e) => {
 });
 
 //API-call
+var apidata;
 function apiCall(nameToSearch){
   let url = `https://api.nationalize.io/?name=${nameToSearch}`
   async function fetchData(){
     const response = await fetch(url);
-    var data = await response.json();
-    console.log(data)
+    apidata = await response.json();
+    console.log(apidata)
+    async function loadapidata(){
+      displayApidata(apidata);
+    };
+    loadapidata();
     }
     fetchData();
 }
 
+function displayApidata(data){
+  var table = document.querySelector("#origin tbody");
+  let i = 0
+  if(i==0){
+    table.innerHTML += `<tr><td>${data.country[0].country_id}</td><td>${data.country[0].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[1].country_id}</td><td>${data.country[1].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[2].country_id}</td><td>${data.country[2].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[3].country_id}</td><td>${data.country[3].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[4].country_id}</td><td>${data.country[4].probability}</td></tr>`;
+    i++
+  }
+    table.innerHTML = '<tr><th>Country</th><th>Probability</th></tr>';
+    table.innerHTML += `<tr><td>${data.country[0].country_id}</td><td>${data.country[0].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[1].country_id}</td><td>${data.country[1].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[2].country_id}</td><td>${data.country[2].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[3].country_id}</td><td>${data.country[3].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[4].country_id}</td><td>${data.country[4].probability}</td></tr>`;
+}
+//Show API
+
+// const displayApidata = (apidata) => {
+//   let i = 0;
+//   const htmlString = apidata.map((apioutput) => {
+//     return `
+//       <li id="li" class="names">
+//       <p class="origin_percentages">Hello</p>
+//       </li>
+//         `;
+//   }).join("");
+//   list.innerHTML = htmlString;
+// };
 
 
-const loadOrigin = () => {
-  displayOrigin(daten);
-};
-
-//Display Names
-const displayOrigin = (country_id, probability) => {
-  const htmlString = country_id.map((country_id) => {
-    return `
-            <li class="origin">
-            <p class="origin_percentages" >${country_id} : ${probability}</p>
-        </li>
-        `;
-  }).join("");
-  list.innerHTML = htmlString;
-};
+// //Display Names
+// const displayOrigin = (country_id, probability) => {
+//   const htmlString = country_id.map((country_id) => {
+//     return `
+//             <li class="origin">
+//             <p class="origin_percentages" >${country_id} : ${probability}</p>
+//         </li>
+//         `;
+//   }).join("");
+//   list.innerHTML = htmlString;
+// };
