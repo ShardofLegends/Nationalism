@@ -141,17 +141,17 @@ function displayApidata(data){
   var table = document.querySelector("#origin tbody");
   let i = 0
   if(i==0){
-    table.innerHTML += `<tr><td>${data.country[0].country_id}</td><td>${data.country[0].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[1].country_id}</td><td>${data.country[1].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[2].country_id}</td><td>${data.country[2].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[3].country_id}</td><td>${data.country[3].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[4].country_id}</td><td>${data.country[4].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[0].country_id}</a></td><td>${data.country[0].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[1].country_id}</a></td><td>${data.country[1].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[2].country_id}</a></td><td>${data.country[2].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[3].country_id}</a></td><td>${data.country[3].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[4].country_id}</a></td><td>${data.country[4].probability}</td></tr>`;
     i++
   }
-    table.innerHTML = '<tr><th>Country</th><th>Probability</th></tr>';
-    table.innerHTML += `<tr><td>${data.country[0].country_id}</td><td>${data.country[0].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[1].country_id}</td><td>${data.country[1].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[2].country_id}</td><td>${data.country[2].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[3].country_id}</td><td>${data.country[3].probability}</td></tr>`;
-    table.innerHTML += `<tr><td>${data.country[4].country_id}</td><td>${data.country[4].probability}</td></tr>`;
+    table.innerHTML = '<tr><th><a href="https://www.oenb.at/Statistik/Klassifikationen/ISO-Codes/ISO-Code-Verzeichnis-fuer-Laender--und-Waehrungscodes.html">Country</th><th>Probability</th></tr>';
+    table.innerHTML += `<tr><td>${data.country[0].country_id}</a></td><td>${data.country[0].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[1].country_id}</a></td><td>${data.country[1].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[2].country_id}</a></td><td>${data.country[2].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[3].country_id}</a></td><td>${data.country[3].probability}</td></tr>`;
+    table.innerHTML += `<tr><td>${data.country[4].country_id}</a></td><td>${data.country[4].probability}</td></tr>`;
 }
